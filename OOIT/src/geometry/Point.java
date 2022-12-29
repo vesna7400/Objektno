@@ -1,10 +1,9 @@
 package geometry;
 
-public class Point {
+public class Point extends Shape {
 
 	private int x;
 	private int y;
-	private boolean selected;
 	
 	//Konstruktor
 	
@@ -31,6 +30,11 @@ public class Point {
 		double d = Math.sqrt(dX*dX + dY*dY);
 		return d;
 	}
+	
+	public boolean contains (int x, int y) {
+		return this.distance(x, y)<=2;
+	}
+	
 	
 	@Override
 	public String toString() {
@@ -62,12 +66,5 @@ public class Point {
 	public void setY(int y) {
 		this.y = y;
 	}
-	public boolean isSelected() {
-		return selected;
-	}
-	public void setSelected(boolean selected) {
-		this.selected = selected;
-	}
-	
-	
+
 }

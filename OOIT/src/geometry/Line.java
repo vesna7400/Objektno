@@ -1,10 +1,9 @@
 package geometry;
 
-public class Line {
+public class Line extends Shape {
 
 	private Point startPoint;
 	private Point endPoint;
-	private boolean selected;
 	
 	//Konstruktor
 	
@@ -21,6 +20,16 @@ public class Line {
 		this.startPoint = startPoint;
 		this.endPoint = endPoint;
 		this.selected = selected;
+	}
+	
+	//Metode
+	
+	public double length() {
+		return startPoint.distance(endPoint.getX(), endPoint.getY());
+	}
+	
+	public boolean contains(int x, int y) {
+		return (startPoint.distance(x, y) + endPoint.distance(x, y)) - length() <=2;
 	}
 	
 	@Override
@@ -51,12 +60,5 @@ public class Line {
 	public void setEndPoint(Point endPoint) {
 		this.endPoint = endPoint;
 	}
-	public boolean isSelected() {
-		return selected;
-	}
-	public void setSelected(boolean selected) {
-		this.selected = selected;
-	}
-	
-	
+
 }

@@ -1,10 +1,9 @@
 package geometry;
 
-public class Circle {
+public class Circle extends Shape {
 
 	private Point center;
 	private int r;
-	private boolean selected;
 	
 	//Konstruktor 
 	
@@ -33,9 +32,18 @@ public class Circle {
 		return r*r*Math.PI;
 	}
 	
+	public boolean contains (int x, int y) {
+		return center.distance(x, y) <= r;
+	}
+	
+	public boolean contains (Point p) {
+		return center.distance(p.getX(), p.getY()) <=r;
+	}
+	
+	
 	@Override
 	public String toString() {
-		return "Center:" + center + ",radius" + r;
+		return "Center: " + center + ", radius" + r;
 	}
 	
 	@Override
@@ -61,12 +69,5 @@ public class Circle {
 	public void setR(int r) {
 		this.r = r;
 	}
-	public boolean isSelected() {
-		return selected;
-	}
-	public void setSelected(boolean selected) {
-		this.selected = selected;
-	}
-	
 	
 }

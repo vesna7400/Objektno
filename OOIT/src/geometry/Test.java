@@ -31,7 +31,6 @@ public class Test {
 		Line l1 = new Line();
 		l1.setStartPoint(p1);
 		l1.setEndPoint(p2);
-		
 		System.out.println(l1.getStartPoint().getX());
 		
 		Line l2 = new Line();
@@ -75,6 +74,7 @@ public class Test {
 		System.out.println(p4.equals(p5)); 
 		System.out.println(p4.equals(c2)); 
 		System.out.println(l4.equals(p4)); 
+		
 	}
 
 }
