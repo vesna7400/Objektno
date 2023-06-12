@@ -6,4 +6,5 @@
  *
  */
 module OOIT {
+	requires java.desktop;
 }
